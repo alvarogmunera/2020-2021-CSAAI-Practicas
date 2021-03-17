@@ -1,0 +1,14 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-color: red;
+  }
+  
+  /*  Propiedades de la caja del párrafo */
+  p {
+    margin: 0px;
+    padding: 0px; /* Relleno */
+    border:solid;
+    border-color: blue;
+  }
