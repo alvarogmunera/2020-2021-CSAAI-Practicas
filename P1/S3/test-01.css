@@ -1,5 +1,8 @@
 /*Er comentarioh*/
 body {
+    padding: 0px;
+    margin: 0px;
+    border: none;
     background-color: lightblue;
     color: blue;
 }
@@ -8,4 +11,10 @@ h1 {
 }
 #especial {
     color: yellow;
+}
+p {
+    padding: 0px;
+    margin: 0px;
+    border: solid;
+    border-color: tomato;
 }
