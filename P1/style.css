@@ -3,9 +3,10 @@ html {
 }
 
 h2 {
+    text-align: center;
     color: rgb(255, 255, 255);
     border: 5px solid black;
-    width: 220px;
+    width: 1202px;
     padding: 3px;      
     margin: 3px;
 }
@@ -37,7 +38,7 @@ h2 {
     text-align: left;
     font-family: Georgia, "Times New Roman", Times, serif;
     border: 5px solid black;
-    height: 720px;
+    height: 860px;
     width: 800px;
     padding: 3px;      
     margin: 3px;
@@ -50,4 +51,19 @@ p {
     font-family: Georgia, "Times New Roman", Times, serif;
     padding: 5px;      
     margin: 5px;
+}
+
+.imagenes{
+    position: absolute;
+    right: 250px;
+    top: 5px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    border: 5px solid black;
+    height: 2075px;
+    width: 400px;
+    padding: 3px;      
+    margin: 3px;
+
 }
