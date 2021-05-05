@@ -28,23 +28,57 @@ for(i=0; i<digitos.length; i++){
   }
 }
 
-for (i=0; i<operacion.length; i++){
-  operacion[i].onclick = (ev)=> {
-    if(estado == ESTADO.OP1){
-      operaciones(ev.target.value);
-      console.log(`ESTADO ${estado}`);
-      ESTADO.COMA = true;
+for(i=0; i<operacion.length; i++){
+    operacion[i].onclick = (ev) =>{
+      if(estado == ESTADO.OP1){
+        display.innerHTML += ev.target.value;
+        estado_log.push(estado);
+        estado = ESTADO.OPERATION;
+        console.log(estado, "calculo");
+        
+      }
     }
   }
-}
+
+  reset.onclick = () => {
+    display.innerHTML = "0";
+    estado = ESTADO.INIT;
+    console.log(`ESTADO ${estado}`);
+    ESTADO.COMA = false;
+  }
 
 sqrt.onclick = () => {
     display.innerHTML = Math.sqrt(display.innerHTML);
   }
-
-  igual.onclick = () => {
+  
+igual.onclick = () => {
     display.innerHTML = eval(display.innerHTML);
     estado = ESTADO.OP1;
     console.log(`ESTADO ${estado}`);
     ESTADO.COMA = true;
+  }
+
+  delet.onclick = () => {
+    if((display.innerHTML == '0')||(display.innerHTML == '')){
+      display.innerHTML = '0';
+    }else {
+      display.innerHTML = display.innerHTML.slice(0,-1);
+    }
+  }
+
+
+  function digito(botones)
+{
+  if(estado == ESTADO.INIT){
+    display.innerHTML = botones;
+    estado = ESTADO.OP1;
+    console.log(`ESTADO ${estado}`);
+  } else if (estado == ESTADO.OP1 || estado == ESTADO.OP2) {
+    display.innerHTML += botones;
+    if (estado == ESTADO.OPERATION){
+        display.innerHTML += botones;
+        ESTADO.COMA = false;
+        estado = ESTADO.OP2;
+        console.log(`ESTADO ${estado}`);
+    }
   }
