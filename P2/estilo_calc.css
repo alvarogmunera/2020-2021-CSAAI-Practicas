@@ -3,7 +3,6 @@ body {
     margin-top: 100px;
 }
 
-
 .calculadora{
     margin-left: auto;
     margin-right: auto;
@@ -14,6 +13,10 @@ body {
     margin: auto;
     width: 300px;
     height: 450px;
+    border: none;
+    border-color: rgb(255, 255, 255);
+    border-style:groove;
+    border-radius: 15px;
 }
 
 button{
@@ -31,5 +34,35 @@ button{
     border-color: rgb(255, 255, 255);
     border-style:groove;
     border-radius: 15px;
-    font-family:'Times New Roman', Times, serif, bol
+    font-family:'Times New Roman', Times, serif, bol;
+}
+
+#display {
+    width: 230px;
+    height: 40px;
+    padding: 16px;
+    margin: 40px 10px 40px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    border-style: ridge;
+    border-radius: 10px;
+    font-size: 0.7cm;
+    border-radius: 15px;
+    font-family:'Times New Roman', Times, serif, bol;
+    text-align: right;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#logo {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.5cm;
+    text-align: right;
+    height: 40px;
+    padding: 0px;
+    margin: 0px 0px 0px;
+    color:rgb(0, 0, 0);
 }
