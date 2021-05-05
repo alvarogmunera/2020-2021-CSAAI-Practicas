@@ -4,11 +4,8 @@ display = document.getElementById("display")
 del= document.getElementById('delet')
 clear = document.getElementById("reset")
 punto = document.getElementById("punto")
-raiz = document.getElementById('sqrt')
+sqrt = document.getElementById('sqrt')
 igual = document.getElementById("igual")
-
-let digitos = document.getElementsByClassName("num");
-let operacion = document.getElementsByClassName("operacion");
 
 const ESTADO = {
   INIT: 0,
@@ -40,7 +37,7 @@ for(i=0; i<operacion.length; i++){
     }
   }
 
-  reset.onclick = () => {
+  clear.onclick = () => {
     display.innerHTML = "0";
     estado = ESTADO.INIT;
     console.log(`ESTADO ${estado}`);
@@ -58,7 +55,7 @@ igual.onclick = () => {
     ESTADO.COMA = true;
   }
 
-  delet.onclick = () => {
+del.onclick = () => {
     if((display.innerHTML == '0')||(display.innerHTML == '')){
       display.innerHTML = '0';
     }else {
@@ -67,18 +64,25 @@ igual.onclick = () => {
   }
 
 
-  function digito(botones)
+function digito(botones)
 {
   if(estado == ESTADO.INIT){
     display.innerHTML = botones;
     estado = ESTADO.OP1;
     console.log(`ESTADO ${estado}`);
   } else if (estado == ESTADO.OP1 || estado == ESTADO.OP2) {
-    display.innerHTML += botones;
+    display.innerHTML += botones;}
     if (estado == ESTADO.OPERATION){
         display.innerHTML += botones;
         ESTADO.COMA = false;
         estado = ESTADO.OP2;
         console.log(`ESTADO ${estado}`);
+    }
+}
+
+function operaciones(operacion){
+    if (estado != ESTADO.OPERATION) {
+      display.innerHTML += operacion;
+      estado = ESTADO.OPERATION;
     }
   }
