@@ -57,6 +57,21 @@ function drawBall() {
     ctx.closePath();
   }
 
+// raqueta en canvas
+function drawPaddle() {
+    ctx.beginPath();
+    ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
+    ctx.fillStyle = paddle.visible ? '#0095dd' : 'transparent';
+    ctx.fill();
+    ctx.closePath();
+  }
+
+// score en canvas
+function drawScore() {
+    ctx.font = '20px Arial';
+    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
+  }
+
 // ladrillos en el canvas
 function drawBricks() {
     bricks.forEach(column => {
