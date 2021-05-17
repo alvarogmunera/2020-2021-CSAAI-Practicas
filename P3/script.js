@@ -1,9 +1,10 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const brickRowCount = 10;
+const brickRowCount = 9;
 const brickColumnCount = 5;
 
 let score = 0;
+const delay = 500;
 
 // propiedades de la pelota
 const ball = {
@@ -20,7 +21,7 @@ const ball = {
 const paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 20,
-    w: 50,
+    w: 100,
     h: 10,
     speed: 8,
     dx: 0,
@@ -117,7 +118,7 @@ function moveBall() {
     // colision con la raqueta
     if (ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y) {
         ball.dy = -ball.speed;
-        }
+    }
 
 
     // Colision con los ladrillos
@@ -138,7 +139,7 @@ function moveBall() {
     if (ball.y + ball.size > canvas.height) {
         showAllBricks();
         score = 0;
-        }
+    }
 }
 
 // incrementar score
@@ -178,17 +179,7 @@ function draw() {
     drawBall();
     drawPaddle();
     drawBricks();
-  }
-
-  // Actualizar canvas
-function update() {
-    movePaddle();
-    moveBall();
-  
-    // Draw everything
-    draw();
-  
-    requestAnimationFrame(update);
+    drawScore();
   }
 
 // Actualizar canvas
