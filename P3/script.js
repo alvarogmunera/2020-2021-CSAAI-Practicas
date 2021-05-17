@@ -1,5 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const brickRowCount = 10;
+const brickColumnCount = 5;
 
 // propiedades de la pelota
 const ball = {
@@ -26,3 +28,9 @@ const brickInfo = {
     padding: 10,
     visible: true
   };
+
+// Creando los ladrillos
+const bricks = [];
+for (let i = 0; i < brickRowCount; i++) {
+  bricks[i] = [];
+}
