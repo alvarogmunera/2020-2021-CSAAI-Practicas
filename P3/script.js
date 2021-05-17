@@ -3,6 +3,8 @@ const ctx = canvas.getContext('2d');
 const brickRowCount = 10;
 const brickColumnCount = 5;
 
+let score = 0;
+
 // propiedades de la pelota
 const ball = {
     x: canvas.width / 2,
@@ -18,6 +20,10 @@ const ball = {
 const paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 20,
+    w: 50,
+    h: 10,
+    speed: 8,
+    dx: 0,
     visible: true
   };
 
@@ -26,6 +32,8 @@ const brickInfo = {
     w: 70,
     h: 20,
     padding: 10,
+    offsetX: 45,
+    offsetY: 60,
     visible: true
   };
 
