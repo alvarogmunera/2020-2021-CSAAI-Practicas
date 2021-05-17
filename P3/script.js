@@ -35,11 +35,24 @@ for (let i = 0; i < brickRowCount; i++) {
   bricks[i] = [];
 }
 
-// Draw ball on canvas
+// bola en el canvas
 function drawBall() {
     ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
      ctx.fillStyle = ball.visible;
     ctx.fill();
     ctx.closePath();
+  }
+
+// ladrillos en el canvas
+function drawBricks() {
+    bricks.forEach(column => {
+      column.forEach(brick => {
+        ctx.beginPath();
+        ctx.rect(brick.x, brick.y, brick.w, brick.h);
+        ctx.fillStyle = brick.visible ? '#0095dd' : 'transparent';
+        ctx.fill();
+        ctx.closePath();
+      });
+    });
   }
