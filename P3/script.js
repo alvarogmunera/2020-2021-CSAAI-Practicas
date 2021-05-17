@@ -90,8 +90,8 @@ function movePaddle() {
     paddle.x += paddle.dx;
   
     // Detección del muro
-    if (paddle.x - paddle.w > canvas.width) {
-      paddle.x = canvas.width;
+    if (paddle.x + paddle.w > canvas.width) {
+      paddle.x = canvas.width - paddle.w;
     }
   
     if (paddle.x < 0) {
@@ -106,7 +106,7 @@ function moveBall() {
   
     // colision de la pelota con el muro(dcha e izq)
     if (ball.x + ball.size > canvas.width || ball.x - ball.size < 0) {
-        ball.dx *= -1; // ball.dx = ball.dx * -1
+        ball.dx *= -1;
     }
 
     // colision de la pelota con el muro (arriba y abajo)
@@ -115,34 +115,53 @@ function moveBall() {
     }
 
     // colision con la raqueta
-    if (
-        ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y) {
+    if (ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y) {
         ball.dy = -ball.speed;
         }
 
 
     // Colision con los ladrillos
     bricks.forEach(column => {
-    column.forEach(brick => {
-        if (brick.visible) {
-        if (
-            ball.x - ball.size > brick.x &&
-            ball.x + ball.size < brick.x + brick.w &&
-            ball.y + ball.size > brick.y &&
-            ball.y - ball.size < brick.y + brick.h
-        ) {
-            ball.dy *= -1;
-                brick.visible = false;
-        }
-        }
-    });
+        column.forEach(brick => {
+            if (brick.visible) {
+                if (ball.x - ball.size > brick.x && ball.x + ball.size < brick.x + brick.w &&
+                ball.y + ball.size > brick.y && ball.y - ball.size < brick.y + brick.h) {
+                    ball.dy *= -1;
+                    brick.visible = false;
+                    increaseScore();
+                }
+            }
+        });
     });
 
     // Perder
     if (ball.y + ball.size > canvas.height) {
         showAllBricks();
+        score = 0;
         }
 }
+
+// incrementar score
+function increaseScore() {
+    score++;
+  
+    if (score % (brickRowCount * brickColumnCount) === 0) {
+  
+        ball.visible = false;
+        paddle.visible = false;
+  
+        setTimeout(function () {
+            showAllBricks();
+            score = 0;
+            paddle.x = canvas.width / 2 - 40;
+            paddle.y = canvas.height - 20;
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            ball.visible = true;
+            paddle.visible = true;
+        },delay)
+    }
+  }
 
 // Aparecer los ladrillos
 function showAllBricks() {
