@@ -76,17 +76,19 @@ function moveBall() {
     ball.x += ball.dx;
     ball.y += ball.dy;
   
-    // colision de la pelota (derecha e izq)
-    if (ball.x - ball.size > canvas.width || ball.x + ball.size < 0) {
-        ball.dx *= -1;
+    // colision de la pelota con el muro(dcha e izq)
+    if (ball.x + ball.size > canvas.width || ball.x - ball.size < 0) {
+      ball.dx *= -1; // ball.dx = ball.dx * -1
     }
 
-    // colision de la pelota (arriba y abajo)
+    // colision de la pelota con el muro (arriba y abajo)
     if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
-        ball.dy = 0;
-    }
+    ball.dy *= -1;
+  }
 
-    // colision de raqueta
-    if (ball.x - ball.size > paddle.x || ball.x + ball.size < paddle.x + paddle.w || ball.y + ball.size > paddle.y) {
-        ball.dy = ball.speed;
-    }
+    // colision con la raqueta
+    if (
+        ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y) {
+        ball.dy = -ball.speed;
+      }
+}
