@@ -11,3 +11,10 @@ const ball = {
     dy: -4,
     visible: true
   };
+
+// propiedades de la raqueta
+const paddle = {
+    x: canvas.width / 2 - 40,
+    y: canvas.height - 20,
+    visible: true
+  };
