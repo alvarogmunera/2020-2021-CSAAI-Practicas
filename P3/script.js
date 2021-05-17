@@ -39,7 +39,7 @@ for (let i = 0; i < brickRowCount; i++) {
 function drawBall() {
     ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
-     ctx.fillStyle = ball.visible;
+     ctx.fillStyle = ball.visible  ? '#0095dd' : 'transparent';;
     ctx.fill();
     ctx.closePath();
   }
@@ -55,4 +55,18 @@ function drawBricks() {
         ctx.closePath();
       });
     });
+  }
+
+// Move paddle on canvas
+function movePaddle() {
+    paddle.x += paddle.dx;
+  
+    // Wall detection
+    if (paddle.x - paddle.w > canvas.width) {
+      paddle.x = canvas.width;
+    }
+  
+    if (paddle.x < 0) {
+      paddle.x = 0;
+      }
   }
