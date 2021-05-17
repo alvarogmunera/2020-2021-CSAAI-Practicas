@@ -77,17 +77,13 @@ function moveBall() {
     ball.y += ball.dy;
   
     // colision de la pelota (derecha e izq)
-    if (ball.x - ball.size > canvas.width){
-        if (ball.x + ball.size < 0) {
+    if (ball.x - ball.size > canvas.width || ball.x + ball.size < 0) {
         ball.dx *= -1;
-        }
     }
 
     // colision de la pelota (arriba y abajo)
-    if (ball.y + ball.size > canvas.height){ 
-        if(ball.y - ball.size < 0) {
+    if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
         ball.dy = 0;
-        }
     }
 
     // colision de raqueta
