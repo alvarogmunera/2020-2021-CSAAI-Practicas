@@ -69,7 +69,7 @@ function movePaddle() {
     if (paddle.x < 0) {
       paddle.x = 0;
       }
-  }
+}
 
 // movimiento pelota
 function moveBall() {
@@ -78,34 +78,40 @@ function moveBall() {
   
     // colision de la pelota con el muro(dcha e izq)
     if (ball.x + ball.size > canvas.width || ball.x - ball.size < 0) {
-      ball.dx *= -1; // ball.dx = ball.dx * -1
+        ball.dx *= -1; // ball.dx = ball.dx * -1
     }
 
     // colision de la pelota con el muro (arriba y abajo)
     if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
     ball.dy *= -1;
-  }
+    }
 
     // colision con la raqueta
     if (
         ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y) {
         ball.dy = -ball.speed;
-      }
-}
+        }
 
-  // Colision con los ladrillos
-  bricks.forEach(column => {
+
+    // Colision con los ladrillos
+    bricks.forEach(column => {
     column.forEach(brick => {
-      if (brick.visible) {
+        if (brick.visible) {
         if (
-          ball.x - ball.size > brick.x &&
-          ball.x + ball.size < brick.x + brick.w &&
-          ball.y + ball.size > brick.y &&
-          ball.y - ball.size < brick.y + brick.h
+            ball.x - ball.size > brick.x &&
+            ball.x + ball.size < brick.x + brick.w &&
+            ball.y + ball.size > brick.y &&
+            ball.y - ball.size < brick.y + brick.h
         ) {
-          ball.dy *= -1;
+            ball.dy *= -1;
                 brick.visible = false;
         }
-      }
+        }
     });
-  });
+    });
+
+    // Perder
+    if (ball.y + ball.size > canvas.height) {
+        showAllBricks();
+        }
+}
