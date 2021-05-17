@@ -18,3 +18,11 @@ const paddle = {
     y: canvas.height - 20,
     visible: true
   };
+
+// propiedades ladrillos
+const brickInfo = {
+    w: 70,
+    h: 20,
+    padding: 10,
+    visible: true
+  };
