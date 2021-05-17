@@ -143,3 +143,40 @@ function update() {
   
     requestAnimationFrame(update);
   }
+
+// Actualizar canvas
+function update() {
+    movePaddle();
+    moveBall();
+  
+    draw();
+  
+    requestAnimationFrame(update);
+  }
+
+  update();
+
+  // evento tecla down
+function keyDown(e) {
+    if (e.key === 'Right' || e.key === 'ArrowRight') {
+      paddle.dx = paddle.speed;
+    } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
+      paddle.dx = -paddle.speed;
+    }
+  }
+  
+  // evento tecla up
+  function keyUp(e) {
+    if (
+      e.key === 'Right' ||
+      e.key === 'ArrowRight' ||
+      e.key === 'Left' ||
+      e.key === 'ArrowLeft'
+    ) {
+      paddle.dx = 0;
+    }
+  }
+  
+  // Keyboard event handlers
+  document.addEventListener('keydown', keyDown);
+  document.addEventListener('keyup', keyUp);
