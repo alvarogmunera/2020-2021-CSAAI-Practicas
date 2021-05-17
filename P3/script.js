@@ -57,11 +57,11 @@ function drawBricks() {
     });
   }
 
-// Move paddle on canvas
+// movimiento raqueta
 function movePaddle() {
     paddle.x += paddle.dx;
   
-    // Wall detection
+    // Detección del muro
     if (paddle.x - paddle.w > canvas.width) {
       paddle.x = canvas.width;
     }
@@ -70,3 +70,15 @@ function movePaddle() {
       paddle.x = 0;
       }
   }
+
+// movimiento pelota
+function moveBall() {
+    ball.x += ball.dx;
+    ball.y += ball.dy;
+  
+    // colision de la pelota
+    if (ball.x - ball.size > canvas.width){
+        if (ball.x + ball.size < 0) {
+        ball.dx *= -1;
+        }
+    }
