@@ -132,3 +132,14 @@ function draw() {
     drawPaddle();
     drawBricks();
   }
+
+  // Actualizar canvas
+function update() {
+    movePaddle();
+    moveBall();
+  
+    // Draw everything
+    draw();
+  
+    requestAnimationFrame(update);
+  }
