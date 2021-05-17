@@ -53,7 +53,7 @@ for (let i = 0; i < brickRowCount; i++) {
 function drawBall() {
     ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
-     ctx.fillStyle = ball.visible  ? '#0095dd' : 'transparent';;
+     ctx.fillStyle = ball.visible  ? '#000000' : 'transparent';;
     ctx.fill();
     ctx.closePath();
   }
@@ -62,15 +62,15 @@ function drawBall() {
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
-    ctx.fillStyle = paddle.visible ? '#0095dd' : 'transparent';
+    ctx.fillStyle = paddle.visible ? '#000000' : 'transparent';
     ctx.fill();
     ctx.closePath();
   }
 
 // score en canvas
 function drawScore() {
-    ctx.font = '20px Arial';
-    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
+    ctx.font = '30px TimesNewRoman';
+    ctx.fillText(`Score: ${score}`, canvas.width - 450, 30);
   }
 
 // ladrillos en el canvas
@@ -79,7 +79,7 @@ function drawBricks() {
       column.forEach(brick => {
         ctx.beginPath();
         ctx.rect(brick.x, brick.y, brick.w, brick.h);
-        ctx.fillStyle = brick.visible ? '#0095dd' : 'transparent';
+        ctx.fillStyle = brick.visible ? '#000000' : 'transparent';
         ctx.fill();
         ctx.closePath();
       });
