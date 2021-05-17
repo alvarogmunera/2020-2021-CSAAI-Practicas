@@ -115,3 +115,20 @@ function moveBall() {
         showAllBricks();
         }
 }
+
+// Aparecer los ladrillos
+function showAllBricks() {
+    bricks.forEach(column => {
+      column.forEach(brick => (brick.visible = true));
+    });
+  }
+
+  // Dibujar
+function draw() {
+    // clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+    drawBall();
+    drawPaddle();
+    drawBricks();
+  }
