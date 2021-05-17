@@ -89,3 +89,8 @@ function moveBall() {
         ball.dy = 0;
         }
     }
+
+    // colision de raqueta
+    if (ball.x - ball.size > paddle.x || ball.x + ball.size < paddle.x + paddle.w || ball.y + ball.size > paddle.y) {
+        ball.dy = ball.speed;
+    }
