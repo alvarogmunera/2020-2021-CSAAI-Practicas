@@ -66,7 +66,7 @@ deslizadorR.oninput = () => {
 }
 
 deslizadorG.oninput = () => {
-    range_value_red.innerHTML = deslizadorG.value;
+    range_value_green.innerHTML = deslizadorG.value;
     ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data
@@ -74,7 +74,7 @@ deslizadorG.oninput = () => {
     ctx.putImageData(imgData, 0, 0);
 }
 deslizadorB.oninput = () => {
-    range_value_red.innerHTML = deslizadorB.value;
+    range_value_blue.innerHTML = deslizadorB.value;
     ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data
