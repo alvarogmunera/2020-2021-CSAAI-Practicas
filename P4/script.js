@@ -56,12 +56,12 @@ img.onload = function () {
 }
 
 //-- Funcion de retrollamada de los deslizadores
-deslizador_R.oninput = () => {
-  colors();
+deslizadorR.oninput = () => {
+  colores();
 }
-deslizador_G.oninput = () => {
-  colors();
+deslizadorG.oninput = () => {
+  colores();
 }
-deslizador_B.oninput = () => {
-  colors();
+deslizadorB.oninput = () => {
+  colores();
 }
