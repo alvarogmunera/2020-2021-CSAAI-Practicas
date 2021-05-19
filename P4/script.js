@@ -57,11 +57,27 @@ img.onload = function () {
 
 //-- Funcion de retrollamada de los deslizadores
 deslizadorR.oninput = () => {
-  colores();
+    range_value_red.innerHTML = deslizadorR.value;
+    ctx.drawImage(img, 0,0);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data
+    colores(data);
+    ctx.putImageData(imgData, 0, 0);
 }
+
 deslizadorG.oninput = () => {
-  colores();
+    range_value_red.innerHTML = deslizadorG.value;
+    ctx.drawImage(img, 0,0);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data
+    colores(data);
+    ctx.putImageData(imgData, 0, 0);
 }
 deslizadorB.oninput = () => {
-  colores();
+    range_value_red.innerHTML = deslizadorB.value;
+    ctx.drawImage(img, 0,0);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data
+    colores(data);
+    ctx.putImageData(imgData, 0, 0);
 }
