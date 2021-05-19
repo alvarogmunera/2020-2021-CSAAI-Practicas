@@ -51,6 +51,17 @@ img.onload = function () {
       data[i+2] = umbralB;
       }
     }
-   
-  
-  }
+ //-- Poner la imagen modificada en el canvas
+ ctx.putImageData(imgData, 0, 0);
+}
+
+//-- Funcion de retrollamada de los deslizadores
+deslizador_R.oninput = () => {
+  colors();
+}
+deslizador_G.oninput = () => {
+  colors();
+}
+deslizador_B.oninput = () => {
+  colors();
+}
