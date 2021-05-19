@@ -51,7 +51,7 @@ img.onload = function () {
       data[i+2] = umbralB;
       }
     }
-    
+
 }
 
 //-- Funcion de retrollamada de los deslizadores
@@ -81,19 +81,19 @@ deslizadorB.oninput = () => {
     ctx.putImageData(imgData, 0, 0);
 }
 
-gray.onclick = () => {
+grises.onclick = () => {
     ctx.drawImage(img, 0,0);
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     //-- Obtener el array con todos los píxeles
     let data = imgData.data
     //-- Filtrar la imagen según el nuevo umbral
-    for (let i = 0; i < data.length; i+=4) {
-      var R = data[i];
-      var G = data[i+1];
-      var B = data[i+2];
-      var gris = (3 * R + 4 * G + B)/8;
-      gris = data[i] = data[i+1] = data[i+2];
+    for (var i = 0; i < data.length; i+=4) {
+        R = data[i];
+        G = data[i+1];
+        B = data[i+2];
+        gris = (3 * R + 4 * G + B)/8;
+        gris = data[i] = data[i+1] = data[i+2];
     }
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
@@ -108,5 +108,5 @@ gray.onclick = () => {
     deslizadorR.value = 255;
     deslizadorG.value=255;
     deslizadorB.value= 255;
-    deslizadores();
+
 }
