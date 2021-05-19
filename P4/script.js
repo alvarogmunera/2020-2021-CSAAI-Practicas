@@ -6,9 +6,9 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 //-- Acceso al deslizador
-const deslizador1 = document.getElementById('deslizadorr');
-const deslizador2 = document.getElementById('deslizadorg');
-const deslizador3 = document.getElementById('deslizadorb');
+const deslizadorR = document.getElementById('deslizadorr');
+const deslizadorG = document.getElementById('deslizadorg');
+const deslizadorB = document.getElementById('deslizadorb');
 //-- Valor del deslizador
 const range_value_red = document.getElementById('range_value_red');
 const range_value_blue = document.getElementById('range_value_blue');
@@ -33,3 +33,24 @@ img.onload = function () {
   
     console.log("Imagen lista...");
   };
+
+  function colores (data){
+    umbralR = deslizadorR.value;
+    umbralG = deslizadorG.value;
+    umbralB = deslizadorB.value;
+  
+    //-- Filtrar la imagen según el nuevo umbral
+    for (let i = 0; i < data.length; i+=4) {
+      if (data[i] > umbralR){
+        data[i] = umbralR;
+      }
+      if (data[i+1] > umbralG){
+      data[i+1] = umbralG;
+      }
+      if (data[i+2] > umbralB){
+      data[i+2] = umbralB;
+      }
+    }
+   
+  
+  }
