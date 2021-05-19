@@ -51,8 +51,7 @@ img.onload = function () {
       data[i+2] = umbralB;
       }
     }
- //-- Poner la imagen modificada en el canvas
- ctx.putImageData(imgData, 0, 0);
+    
 }
 
 //-- Funcion de retrollamada de los deslizadores
@@ -99,3 +98,15 @@ gray.onclick = () => {
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
   }
+
+  colors.onclick = () => {
+    ctx.drawImage(img, 0,0);
+    //-- Obtener la imagen del canvas en pixeles
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    //-- Obtener el array con todos los píxeles
+    let data = imgData.data
+    deslizadorR.value = 255;
+    deslizadorG.value=255;
+    deslizadorB.value= 255;
+    deslizadores();
+}
