@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="script.css">
     <script src="script.js" defer></script>
     <title>Procesado de imágenes</title>
 </head>
 <body>
+    <div class='titulo'>
+        <th><p class="titulo1">imagen original</p></th>
+        <th><p class="titulo2">imagen modificada</p></th>
+    </div>
     <img src='imagen.jpg' id='imagen'>
     <canvas id='canvas'></canvas>
     <br>
@@ -16,12 +21,12 @@
     <button id="binario" class="botones">Binario</button>
 
     <br>
-    <p>Umbral de rojo:</p>
-    <input type="range" id="deslizadorr" min="0" max="255" value="255"/><p id="range_value_red"></p>
-    <p>Umbral de verde:</p>
-    <input type="range" id="deslizadorg" min="0" max="255" value="255"/><p id="range_value_green"></p>
-    <p>Umbral de azul:</p>
-    <input type="range" id="deslizadorb" min="0" max="255" value="255"/><p id="range_value_blue"></p>
+    <p class='desliz1'>Umbral de rojo:</p>
+    <input type="range" id="deslizadorr" class='deslizador' min="0" max="255" value="255"/><p id="range_value_red"></p>
+    <p class='desliz2'>Umbral de verde:</p>
+    <input type="range" id="deslizadorg" class='deslizador' min="0" max="255" value="255"/><p id="range_value_green"></p>
+    <p class='desliz3'>Umbral de azul:</p>
+    <input type="range" id="deslizadorb" class='deslizador' min="0" max="255" value="255"/><p id="range_value_blue"></p>
 
 </body>
 </html>
