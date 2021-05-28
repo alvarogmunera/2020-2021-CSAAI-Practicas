@@ -10,7 +10,7 @@ const btn_src_off = document.getElementById("btn_src_off");
 
 
 //-- Establecer las dimensiones de los vídeos
-directo.width=420;
+directo.width=620;
 directo.height=200;
 video1.width=200;  
 video1.height=100;
@@ -24,22 +24,35 @@ const TEST_IMAGE_URL = "test.png";
 //-- ha arrancado
 directo.poster = TEST_IMAGE_URL;
 video1.poster = TEST_IMAGE_URL;
+video2.poster = TEST_IMAGE_URL;
 
 //-- Boton de FUENTES-ON
 btn_src_on.onclick = () => {
  
-  //-- Establecer la fuente de la cámara 1
-  video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+    //-- Establecer la fuente de la cámara 1
+    video1.src="realizador-fuente1.mp4";
 
-  //-- Reprodeucimos un vídeo, desde el comienzo
-  video1.currentTime = 0;
-  video1.play();
 
-  //-- Y en silencio...
-  video1.muted;
+    //-- Reprodeucimos un vídeo, desde el comienzo
+    video1.currentTime = 0;
+    video1.play();
 
-  //-- En la emisión en directo ponemos la imagen de prueba
-  directo.poster = TEST_IMAGE_URL;
+    //-- Y en silencio...
+    video1.muted;
+
+    //-- Establecer la fuente de la cámara 2
+    video2.src="realizador-fuente2.mp4";
+
+
+    //-- Reprodeucimos un vídeo, desde el comienzo
+    video2.currentTime = 0;
+    video2.play();
+
+    //-- Y en silencio...
+    video2.muted;
+
+    //-- En la emisión en directo ponemos la imagen de prueba
+    directo.poster = TEST_IMAGE_URL;
 };
 
 //-- Botón de Test
@@ -55,3 +68,21 @@ btn_video1.onclick = () => {
     directo.play();
     directo.poster=null;
 };
+
+//-- Botón de Selección de la cámara 2
+btn_video2.onclick = () => {
+    directo.src = video2.src;
+    directo.currentTime = video2.currentTime;
+    directo.play();
+    directo.poster=null;
+};
+
+// boton src off
+btn_src_off.onclick = () => {
+    video1.poster = TEST_IMAGE_URL;
+    video2.poster = TEST_IMAGE_URL;
+    video1.src = null;
+    video2.src = null;
+    directo.poster = TEST_IMAGE_URL;
+    directo.src = null;
+}

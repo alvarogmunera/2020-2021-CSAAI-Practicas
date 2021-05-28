@@ -9,11 +9,13 @@
     <title>Procesado de imágenes</title>
 </head>
 <body>
-    <div class='titulo'>
-        <br>
-        <p class="titulo1">imagen original</p>
-        <p class="titulo2">imagen modificada</p>
-    </div>
+    <table>
+        <tr>
+            <th><p class="titulo">IMAGEN ORIGINAL:</p>
+            <th><p class="titulo">IMAGEN MODIFICADA:</p>
+        </tr>
+    </table>
+
     <img src='imagen.jpg' id='imagen'>
     <canvas id='canvas'></canvas>
     <br>
@@ -21,13 +23,21 @@
     <button id="gris" class="botones">Gris</button>
     <button id="binario" class="botones">Binario</button>
 
-    <br>
-    <p class='desliz1'>Umbral de rojo:</p>
-    <input type="range" id="deslizadorr" class='deslizador' min="0" max="255" value="255"/><p id="range_value_red"></p>
-    <p class='desliz2'>Umbral de verde:</p>
-    <input type="range" id="deslizadorg" class='deslizador' min="0" max="255" value="255"/><p id="range_value_green"></p>
-    <p class='desliz3'>Umbral de azul:</p>
-    <input type="range" id="deslizadorb" class='deslizador' min="0" max="255" value="255"/><p id="range_value_blue"></p>
+    <table>
+        <tr>
+            <th><p class='desliz1'>Umbral de rojo:</p>
+            <th><p class='desliz2'>Umbral de verde:</p>
+            <th><p class='desliz3'>Umbral de azul:</p>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <th><input type="range" id="deslizadorr" class='deslizador' min="0" max="255" value="255"/><p id="range_value_red"></p>
+            <th><input type="range" id="deslizadorg" class='deslizador' min="0" max="255" value="255"/><p id="range_value_green"></p>
+            <th><input type="range" id="deslizadorb" class='deslizador' min="0" max="255" value="255"/><p id="range_value_blue"></p>
+        </tr>
+    </table>
 
 </body>
 </html>

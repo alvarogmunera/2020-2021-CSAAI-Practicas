@@ -5,18 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link rel = "stylesheet" href="script.css"> 
     <title>Practica 5</title>
 </head>
 <body>
-    <video id="directo"></video>
+    <table>
+        <tr>
+            <th><p id="parrafo2">VIDEO EN DIRECTO:</p>
+        </tr>
+        <th><video id="directo"></video>
+    </table>
+    <table>
+        <tr>
+            <th><p id="parrafo">VIDEO 1:</p></th>
+            <th><p id="parrafo">VIDEO 2:</p></th>
+        </tr>
+        <th><video id="video1"></video></th>
+        <th><video id="video2"></video></th>
+    </table>
     <p></p>
-    <video id="video1"></video>
+    <input type="button" class ="boton" value="Video 1" id="btn_video1">
+    <input type="button" class ="boton" value="Video 2" id="btn_video2">
+    <input type="button" class ="boton" value="Test" id="btn_test">
     <p></p>
-    <input type="button" value="Video 1" id="btn_video1">
-    <input type="button" value="Video 2" id="btn_video2">
-    <input type="button" value="Test" id="btn_test">
-    <p></p>
-    <input type="button" value="Fuentes ON" id="btn_src_on">
-    <input type="button" value="Fuentes OFF" id="btn_src_off">
+    <input type="button" class ="boton2" value="Fuentes ON" id="btn_src_on">
+    <input type="button" class ="boton2" value="Fuentes OFF" id="btn_src_off">
 </body>
 </html>
