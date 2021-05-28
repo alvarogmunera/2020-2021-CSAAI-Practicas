@@ -30,7 +30,7 @@ video2.poster = TEST_IMAGE_URL;
 btn_src_on.onclick = () => {
  
     //-- Establecer la fuente de la cámara 1
-    video1.src="realizador-fuente1.mp4";
+    video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
 
 
     //-- Reprodeucimos un vídeo, desde el comienzo
@@ -41,7 +41,7 @@ btn_src_on.onclick = () => {
     video1.muted;
 
     //-- Establecer la fuente de la cámara 2
-    video2.src="realizador-fuente2.mp4";
+    video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
 
 
     //-- Reprodeucimos un vídeo, desde el comienzo
