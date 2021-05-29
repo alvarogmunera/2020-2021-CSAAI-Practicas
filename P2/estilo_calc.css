@@ -12,7 +12,7 @@ body {
     display: block;
     margin: auto;
     width: 300px;
-    height: 450px;
+    height: 400px;
     border: none;
     border-color: rgb(255, 255, 255);
     border-style:groove;
@@ -40,8 +40,8 @@ button{
 #display {
     width: 230px;
     height: 40px;
-    padding: 16px;
-    margin: 40px 10px 40px;
+    padding: 10px;
+    margin: 40px 17px 40px;
     flex-direction: column;
     align-items: flex-end;
     background-color: rgb(0, 0, 0);
@@ -58,6 +58,5 @@ button{
 }
 
 #logo {
-    right: 20px;
-    top: 5px;
+    margin: 0px 17px 5px;
 }
