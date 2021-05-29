@@ -1,8 +1,9 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const brickRowCount = 9;
+const brickRowCount = 14;
 const brickColumnCount = 5;
 
+var vidas = 3;
 let score = 0;
 const delay = 500;
 
@@ -10,7 +11,7 @@ const delay = 500;
 const ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
-    size: 10,
+    size: 8,
     speed: 4,
     dx: 4,
     dy: -4,
@@ -21,8 +22,8 @@ const ball = {
 const paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 20,
-    w: 100,
-    h: 10,
+    w: 80,
+    h: 20,
     speed: 8,
     dx: 0,
     visible: true
@@ -30,11 +31,11 @@ const paddle = {
 
 // propiedades ladrillos
 const brickInfo = {
-    w: 70,
-    h: 20,
-    padding: 10,
-    offsetX: 45,
-    offsetY: 60,
+    w: 50,
+    h: 30,
+    padding: 5,
+    offsetX: 17,
+    offsetY: 40,
     visible: true
   };
 
