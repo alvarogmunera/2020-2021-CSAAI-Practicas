@@ -71,8 +71,14 @@ function drawPaddle() {
 // score en canvas
 function drawScore() {
     ctx.font = '30px TimesNewRoman';
-    ctx.fillText(`Score: ${score}`, canvas.width - 450, 30);
+    ctx.fillText(`Score: ${score}`, canvas.width - 700, 30);
   }
+
+  // vidas en canvas
+function drawVidas() {
+  ctx.font = '30px TimesNewRoman';
+  ctx.fillText(`vidas: ${vidas}`, canvas.width - 200, 30);
+}
 
 // ladrillos en el canvas
 function drawBricks() {
@@ -114,6 +120,13 @@ function moveBall() {
     // colision de la pelota con el muro (arriba y abajo)
     if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
     ball.dy *= -1;
+    vidas += -1;
+    }else if(vidas == 0) {
+      document.getElementById("canvas").style.display="none";
+      document.getElementById("instrucciones1").style.display="none";
+      document.getElementById("instrucciones2").style.display="none";
+      document.getElementById("instrucciones").style.display="none";
+      document.getElementById("bienvenida").style.display="none";
     }
 
     // colision con la raqueta
@@ -181,6 +194,7 @@ function draw() {
     drawPaddle();
     drawBricks();
     drawScore();
+    drawVidas();
   }
 
 // Actualizar canvas
