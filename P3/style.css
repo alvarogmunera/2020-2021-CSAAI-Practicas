@@ -17,6 +17,13 @@
     border-style:groove;
   }
 
+  #gameover {
+
+    size : 100px;
+    margin-top: 3cm;
+    margin-left: 2cm;
+  }
+
   p {
     font-family:'Times New Roman', Times, serif, bol;
     font-size: 20px;

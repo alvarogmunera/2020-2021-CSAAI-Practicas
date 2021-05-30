@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 const brickRowCount = 14;
 const brickColumnCount = 5;
 
-var vidas = 3;
+var vidas = 1;
 let score = 0;
 const delay = 500;
 
@@ -118,15 +118,11 @@ function moveBall() {
     }
 
     // colision de la pelota con el muro (arriba y abajo)
-    if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
+    if (ball.y + ball.size > canvas.height ){
     ball.dy *= -1;
     vidas += -1;
-    }else if(vidas == 0) {
-      document.getElementById("canvas").style.display="none";
-      document.getElementById("instrucciones1").style.display="none";
-      document.getElementById("instrucciones2").style.display="none";
-      document.getElementById("instrucciones").style.display="none";
-      document.getElementById("bienvenida").style.display="none";
+    }else if (ball.y - ball.size < 0){
+      ball.dy *= -1;
     }
 
     // colision con la raqueta
@@ -148,12 +144,6 @@ function moveBall() {
             }
         });
     });
-
-    // Perder
-    if (ball.y + ball.size > canvas.height) {
-        showAllBricks();
-        score = 0;
-    }
 }
 
 // incrementar score
@@ -189,12 +179,26 @@ function showAllBricks() {
 function draw() {
     // clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById("gameover").style.display="none";
+    document.getElementById("fracaso").style.display="none";
+    document.getElementById("fracaso2").style.display="none";
   
     drawBall();
     drawPaddle();
     drawBricks();
     drawScore();
     drawVidas();
+    if(vidas == 0) {
+      document.getElementById("canvas").style.display="none";
+      document.getElementById("instrucciones1").style.display="none";
+      document.getElementById("instrucciones2").style.display="none";
+      document.getElementById("instrucciones").style.display="none";
+      document.getElementById("bienvenida").style.display="none";
+      document.getElementById("fracaso").style.display="inline-block";
+      document.getElementById("fracaso2").style.display="inline-block";
+      document.getElementById("gameover").style.display="inline-block";
+      console.log("fuera");
+    }
   }
 
 // Actualizar canvas
