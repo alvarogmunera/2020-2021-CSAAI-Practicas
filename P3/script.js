@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 const brickRowCount = 14;
 const brickColumnCount = 5;
 
-var vidas = 1;
+var vidas = 3;
 let score = 0;
 const delay = 500;
 
