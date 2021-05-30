@@ -2,16 +2,20 @@
 
 Manual del juego PONG:
 
-¡ESTATE ATENTO!. Al cargar la página, comenzará el juego.
+¡ESTATE ATENTO! Al cargar la página, comenzará el juego.
 
 Sumarás un punto por cada ladrillo que rompas.
 
-Pierdes si la bola bota en el suelo.
-
-¡NO TE DESANIMES!. Si pierdes, el juego no parará, aunque perderás tu score.
+Pierdes si agotas tus vidas. ¡Tienes solo tres!
 
 Gana eliminando todos los ladrillos.
 
 Mueve la raqueta con las flechas izq y dcha.
 
-Mejoras
+Al perder, refresca la página para jugar de nuevo.
+
+
+
+Mejoras:
+
+- Animación al perder la partida.
