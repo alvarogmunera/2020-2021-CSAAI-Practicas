@@ -17,6 +17,8 @@ const range_value_green = document.getElementById('range_value_green');
 const grises = document.getElementById('gris');
 const colors = document.getElementById('color');
 const binario = document.getElementById('binario');
+const negativo = document.getElementById('negativo');
+const tabla = document.getElementById('tabla');
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
 //-- lleva un tiempo. Sólo podemos acceder a ella una vez
@@ -84,6 +86,7 @@ deslizadorB.oninput = () => {
 
 grises.onclick = () => {
     ctx.drawImage(img, 0,0);
+    document.getElementById("tabla").style.display = 'none';
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     //-- Obtener el array con todos los píxeles
@@ -102,6 +105,7 @@ grises.onclick = () => {
 
 colors.onclick = () => {
     ctx.drawImage(img, 0,0);
+    document.getElementById("tabla").style.display = 'inline-block';
     //-- Obtener la imagen del canvas en pixeles
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     //-- Obtener el array con todos los píxeles
@@ -115,6 +119,7 @@ binario.onclick = () => {
 
     imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     data = imgData.data;
+    document.getElementById("tabla").style.display = 'none';
   
     var pixel = imgData.data;
     var bw = 240;
@@ -133,5 +138,3 @@ binario.onclick = () => {
     }
     ctx.putImageData(imgData, 0, 0);
 }
-
-console.log("Fin...");
