@@ -1,2 +1,13 @@
  # Práctica 5
-Tanto con esta práctica como con la 4 tuve un problema. Realizando la práctica 5, en vez de añadir los videos con el enlace, me los descargué y los metí en la carpeta p5. Terminé la P5 con el estilo incluido y continué con el estilo de la P4. Una vez terminé de realizar los cambios que consideré oportunos, al ir a realizar el push de unos 20 commits, me saltaba un aviso de que los videos superaban el tamaño máximo permitido (50mb). Intenté borrar los vídeos pero no se arreglaba el problema, por tanto tuve que deshacer los commits realizados con la opción "undo last commit" hasta llegar al commit en el que añadí los vídeos. Por esta razon la P5 y P4 tienen demasiados cambios hechos sin separarlos por commits, ya que se me borraron los commits pero los archivos no se modificaron a las versiones anteriores.
+
+ Manual de usuario:
+
+ Al cargar la página tenemos 5 botones (Video 1, Video 2, Test, Fuentes ON, Fuentes OFF).
+
+ Si pulsamos sobre los botones de 'Video1','Video2' y 'Test', al estar las fuentes apagadas, no se mostrará nada en el video en directo.
+
+ Si pulsamos 'Fuentes ON' y a continuación le damos a cualquier botón correspondiente a un video o test, aparecerá en el video en directo dicho video.
+
+ Si mientras que se está reproduciendo en el video en directo un video, y seleccionamos visualizar otro (test incluido), éste último comenzará a reproducirse en el directo.
+
+ Al pulsar el 'Fuentes OFF', se apagan todas las fuentes inclusive el directo.
