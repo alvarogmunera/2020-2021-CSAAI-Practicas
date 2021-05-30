@@ -1,2 +1,13 @@
  # Práctica 4
-Tanto con esta práctica como con la 5 tuve un problema. Realizando la práctica 5, en vez de añadir los videos con el enlace, me los descargué y los metí en la carpeta p5. Terminé la P5 con el estilo incluido y continué con el estilo de la P4. Una vez terminé de realizar los cambios que consideré oportunos, al ir a realizar el push de unos 20 commits, me saltaba un aviso de que los videos superaban el tamaño máximo permitido (50mb). Intenté borrar los vídeos pero no se arreglaba el problema, por tanto tuve que deshacer los commits realizados con la opción "undo last commit" hasta llegar al commit en el que añadí los vídeos. Por esta razon la P5 y P4 tienen demasiados cambios hechos sin separarlos por commits, ya que se me borraron los commits pero los archivos no se modificaron a las versiones anteriores.
+
+Manual práctica 4:
+
+Se mostrarán dos imágenes, la imagen original y la modificada.
+
+Sobre la original podremos cambiar las intensidades de las componentes RGB mediante los deslizadores que se muestran por pantalla.
+
+También, presionando los botones 'gris' y 'binario', podremos ver la imagen en grises y umbralizada respectivamente.
+
+Nota: Para la imagen umralizada se ha establecido un umbral de 240.
+
+Si al cargar la página no aparece la imagen modificada, volver a refrescar la página hasta que aparezca.
